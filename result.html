@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dahej Result</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.1.1/dist/index.umd.js"></script>
+</head>
+<body>
+
+    <div class="fireworkDiv"></div>  <!-- Fireworks Container -->
+
+    <!-- 🎉 Party Poppers at Bottom -->
+    <div class="party-popper left-popper">🎊</div>
+    <div class="party-popper right-popper">🎊</div>
+
+    <div class="container">
+        <h1 class="title">🎉 Your Dahej Calculation 🎉</h1>
+        <h2 id="dowryAmount"></h2>
+        <ul id="dowryItems"></ul>
+        <a href="index.html" class="back-btn">🔙 Back</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let params = new URLSearchParams(window.location.search);
+            let amount = params.get("amount");
+            let items = params.get("items") ? params.get("items").split(",") : [];
+
+            document.getElementById("dowryAmount").innerText = `₹${parseInt(amount).toLocaleString()}`;
+
+            let itemList = document.getElementById("dowryItems");
+            itemList.innerHTML = "";
+
+            items.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = item;
+                itemList.appendChild(li);
+            });
+
+            // 🎆 Fireworks Effect
+            const container = document.querySelector(".fireworkDiv");
+            const fireworks = new Fireworks.default(container, {
+                autoresize: true,
+                opacity: 0.7,
+                acceleration: 1.02,
+                friction: 0.98,
+                gravity: 0.9,
+                particles: 80,
+                explosion: 5,
+                intensity: 50,
+                trace: 3,
+                traceSpeed: 1,
+                flickering: 50,
+                brightness: { min: 50, max: 80 },
+                lineWidth: { explosion: { min: 1, max: 4 }, trace: { min: 1, max: 4 } },
+                hue: { min: 0, max: 360 },
+                delay: { min: 30, max: 60 },
+                rocketsPoint: { min: 50, max: 50 },
+            });
+
+            fireworks.start();  // Start fireworks 🎆
+        });
+    </script>
+
+</body>
+</html>

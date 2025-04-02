@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate My Dahej</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container" autofill="false">
+    <h1 class="title">CMD</h1>
+    <h2 class="subtitle">Welcome to <span>CalculateMyDahej.com</span></h2>
+    <p class="tagline">Best way to get your dahej</p>
+
+        <form id="dahejForm" autocomplete="off">
+            <div class="input-group">
+                <label for="age">Age</label>
+                <select id="age" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="18-24">18-24 years</option>
+                    <option value="25-30">25-30 years</option>
+                    <option value="31-35">31-35 years</option>
+                    <option value="36-40">36-40 years</option>
+                    <option value="40+">More than 40 years</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="salary">Salary</label>
+                <input type="number" id="salary" required placeholder="Salary" autocomplete="off">
+            </div>
+        
+            <div class="input-group">
+                <label for="property">Property</label>
+                <input type="text" id="property" required placeholder="House, Land, Flat, Shop" autocomplete="off">
+            </div>
+        
+            <div class="input-group">
+                <label for="cow">Cow</label>
+                <input type="number" id="cow" required placeholder="Cow" autocomplete="off">
+            </div>
+        
+            <div class="input-group">
+                <label for="govJob">Any Government Job in Family?</label>
+                <input type="text" id="govJob" required placeholder="Government Job in Family?" autocomplete="off">
+            </div>
+        
+            <button type="submit">CALCULATE</button>
+        </form>
+        
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
